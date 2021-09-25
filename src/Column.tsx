@@ -41,7 +41,7 @@ interface ColumnProps {
 const calculateMargin = (value?: ColumnProps["marginRight"]) =>
   value
     ? value === "random"
-      ? `${25 + getRandomInt(0, 10)}px`
+      ? `${35 + getRandomInt(0, 10)}px`
       : `${value}px`
     : "";
 
@@ -67,6 +67,11 @@ const Column = ({
     );
   }
 
+  const mouseEnterHandler = () => {
+    setHovering(true);
+    setColor(getRandomContrastingHex([0, 0, 0]));
+  }
+
   return (
     <div
       className="noselect column"
@@ -77,13 +82,15 @@ const Column = ({
         position: floating ? "fixed" : "relative",
         visibility: visible ? undefined : "hidden"
       }}
-      onMouseEnter={() => {
-        setHovering(true);
-        setColor(getRandomContrastingHex([0, 0, 0]));
-      }}
+      onMouseEnter={mouseEnterHandler}
       onMouseLeave={() => {
         setHovering(false);
         setColor("");
+      }}
+      onMouseMove={() => {
+        if (color === "") {
+          mouseEnterHandler();
+        }
       }}
       onClick={() => { if (onClick) onClick() }}
     >
