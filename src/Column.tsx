@@ -79,7 +79,7 @@ const Column = ({
         color,
         cursor: hovering ? "pointer" : "",
         marginRight: marginRightString,
-        position: floating ? "fixed" : "relative",
+        position: floating ? undefined : "relative",
         visibility: visible ? undefined : "hidden"
       }}
       onMouseEnter={mouseEnterHandler}

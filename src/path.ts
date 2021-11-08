@@ -11,8 +11,8 @@ interface Limits {
 }
 
 const generatePaths = (limits: Limits, steps: number) => {
-  const topPath = new Array(steps);
-  const leftPath = new Array(steps);
+  const topPath = new Array<number>(steps);
+  const leftPath = new Array<number>(steps);
 
   let top = 0;
   let left = 0;
@@ -27,4 +27,8 @@ const generatePaths = (limits: Limits, steps: number) => {
   return [topPath, leftPath];
 };
 
-export { generatePaths };
+const scalePath = (path: Array<number>, factor: number) => {
+  return path.map((val) => val * factor);
+};
+
+export { generatePaths, scalePath };
