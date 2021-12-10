@@ -50,7 +50,6 @@ const Column = ({
   topPath,
   leftPath,
   marginRight,
-  floating = false,
   visible = true,
   onClick
 }: ColumnProps) => {
@@ -79,7 +78,7 @@ const Column = ({
         color,
         cursor: hovering ? "pointer" : "",
         marginRight: marginRightString,
-        position: floating ? undefined : "relative",
+        position: "relative",
         visibility: visible ? undefined : "hidden"
       }}
       onMouseEnter={mouseEnterHandler}
