@@ -10,7 +10,7 @@ const Contact = ({ smallScreen }: ContactProps) => {
       flexDirection: "column",
       padding: "0.25rem 0.5rem"
     }}>
-      <h3>Give me a nod, wave, or wink: <a href="mailto:me@danielschubert.dev">me@danielschubert.dev</a></h3>
+      <h3 style={{ margin: "0" }}>Give me a nod, wave, or wink: <a href="mailto:me@danielschubert.dev">me@danielschubert.dev</a></h3>
     </div>
   );
 };

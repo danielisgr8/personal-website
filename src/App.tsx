@@ -60,34 +60,38 @@ export default function App() {
   }, []);
 
   return (
-    <div className="App">
-      {(titles).map((title, i) => (
-        <Column
-          key={i}
-          text={title}
-          topPath={topPath}
-          leftPath={leftPath}
-          marginRight="random"
-          visible={selectedItem === null}
-          onClick={() => setSelectedItem(title)}
-        />
-      ))}
+    <div className="app">
+      <h3 className="header">Daniel Schubert</h3>
+      <div className="content">
+        {(titles).map((title, i) => (
+          <Column
+            key={i}
+            text={title}
+            topPath={topPath}
+            leftPath={leftPath}
+            marginRight="random"
+            visible={selectedItem === null}
+            onClick={() => setSelectedItem(title)}
+          />
+        ))}
 
-      {
-        selectedItem && (
-          <div className="modal" style={{ flexDirection: smallScreen ? "column" : "row"}}>
-            <Column
-              text={selectedItem}
-              topPath={smallScreen ? scalePath(topPath, 0.25) : topPath}
-              leftPath={smallScreen ? scalePath(leftPath, 7) : new Array(repeatCount).fill(0)}
-              marginRight="random"
-              floating
-              onClick={() => setSelectedItem(null)}
-            />
-            {columnTitleToNode(selectedItem, smallScreen)}
-          </div>
-        )
-      }
+        {/* use History API to have routing (e.g. danielschubert.dev/contact) */}
+        {
+          selectedItem && (
+            <div className="modal" style={{ flexDirection: smallScreen ? "column" : "row"}}>
+              <Column
+                text={selectedItem}
+                topPath={smallScreen ? scalePath(topPath, 0.25) : topPath}
+                leftPath={smallScreen ? scalePath(leftPath, 7) : new Array(repeatCount).fill(0)}
+                marginRight="random"
+                floating
+                onClick={() => setSelectedItem(null)}
+              />
+              {columnTitleToNode(selectedItem, smallScreen)}
+            </div>
+          )
+        }
+      </div>
     </div>
   );
 }

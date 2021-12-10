@@ -1,5 +1,14 @@
-.App {
+.app {
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin: 0;
+}
+
+.content {
   display: flex;
 }
 
