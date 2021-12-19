@@ -67,7 +67,8 @@ export default function App() {
           />
         ))}
 
-        {/* use History API to have routing (e.g. danielschubert.dev/contact) */}
+        {/* TODO: use History API to have routing (e.g. danielschubert.dev/contact) */}
+        {/* TODO: animate selected item moving to the left, then render this (should line up exactly) */}
         {
           selectedItem && (
             <div className="modal">
