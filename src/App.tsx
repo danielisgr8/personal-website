@@ -69,6 +69,7 @@ export default function App() {
 
         {/* TODO: use History API to have routing (e.g. danielschubert.dev/contact) */}
         {/* TODO: animate selected item moving to the left, then render this (should line up exactly) */}
+        {/* TODO: a11y concerns */}
         {
           selectedItem && (
             <div className="modal">
@@ -77,9 +78,10 @@ export default function App() {
               <div style={{ display: "flex", flexDirection: smallScreen ? "column" : "row"}}>
                 <Column
                   text={selectedItem}
+                  // TODO: Maybe decide small screen path scaling based off length of text
                   topPath={smallScreen ? scalePath(topPath, 0.25) : topPath}
                   leftPath={smallScreen ? scalePath(leftPath, 7) : new Array(repeatCount).fill(0)}
-                  marginRight="random"
+                  marginRight={20}
                   onClick={() => setSelectedItem(null)}
                 />
 
