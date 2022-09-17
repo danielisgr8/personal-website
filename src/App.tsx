@@ -5,7 +5,7 @@ import { generatePaths, scalePath } from "./path";
 import { Title, titles } from "./constants";
 
 import "./styles.css";
-import Contact from "./sections/Contact";
+import { Aws, Contact, Personal } from "./sections";
 
 const limits = {
   top: {
@@ -21,16 +21,14 @@ const repeatCount = 100;
 
 const mql = window.matchMedia('(max-width: 600px)');
 
-const columnTitleToNode = (title: Title, smallScreen: boolean): ReactNode => {
+const columnTitleToNode = (title: Title): ReactNode => {
   switch (title) {
     case Title.Aws:
-      return <p>AWS</p>
+      return <Aws />;
     case Title.Personal:
-      return <p>Personal</p>
+      return <Personal />;
     case Title.Contact:
-      return <Contact smallScreen={smallScreen} />
-    default:
-      return <p>{title}</p>
+      return <Contact />;
   }
 };
 
@@ -85,7 +83,7 @@ export default function App() {
                   onClick={() => setSelectedItem(null)}
                 />
 
-                {columnTitleToNode(selectedItem, smallScreen)}
+                {columnTitleToNode(selectedItem)}
               </div>
             </div>
           )
