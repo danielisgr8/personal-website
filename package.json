@@ -1,7 +1,7 @@
 {
-  "name": "react-typescript",
+  "name": "@danielisgr8/personal-website",
   "version": "1.0.0",
-  "description": "React and TypeScript example starter project",
+  "description": "Personal website and portfolio",
   "keywords": [
     "typescript",
     "react"
