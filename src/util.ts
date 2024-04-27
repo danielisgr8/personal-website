@@ -1,4 +1,4 @@
-// min is inclusive, max is exclusive
+/** min is inclusive, max is exclusive */
 const getRandomInt = (min: number, max: number) => {
   min = Math.ceil(min);
   max = Math.floor(max);

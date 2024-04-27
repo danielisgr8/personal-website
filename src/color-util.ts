@@ -14,8 +14,10 @@ const calculateRelativeLuminence = (
 
 type Rgb24Bit = [number, number, number];
 
-// returns a value from 1 to 21, with a larger number meaning higher contract
-// text should have a value of at least 4.5 (source: https://www.w3.org/TR/WCAG/#contrast-minimum)
+/**
+ * Returns a value from 1 to 21, with a larger number meaning higher contract.
+ * Text should have a value of at least 4.5 (source: https://www.w3.org/TR/WCAG/#contrast-minimum).
+ */
 const calculateContrastRatio = (rgb24bit1: Rgb24Bit, rgb24bit2: Rgb24Bit) => {
   const l1 = calculateRelativeLuminence(...rgb24bit1);
   const l2 = calculateRelativeLuminence(...rgb24bit2);
